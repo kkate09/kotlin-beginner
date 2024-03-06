@@ -1,0 +1,86 @@
+//CALCULATOR
+
+//addition
+fun sum(x: Int, y: Int): Int{
+        return x + y
+}
+//subtraction
+fun difference(x: Int, y: Int): Int{
+    return x - y
+}
+//division
+fun division(x: Int, y: Int): Int{
+    return x / y
+}
+//multiplication
+fun product(x: Int,y: Int): Int{
+    return x * y
+}
+
+
+
+fun main(){
+    println("Welcome to the calculator app. Select an option")
+    println("[1] Addition [2] Subtraction [3] Division [4] Multiplication")
+
+    val choice = readLine()
+
+    when(choice){
+
+        //addition
+        "1" -> {
+            println("You have selected addition.")
+            println("Enter your first number")
+            val addVal1= readLine()
+            val Val1Int = addVal1?.toIntOrNull()
+            println("Enter your second number")
+            val addVal2= readLine()
+            val Val2Int = addVal2?.toIntOrNull()
+
+            val result = Val1Int?.let { Val2Int?.let { it1 -> sum(it, it1) } }
+             println("Addition of $addVal1 and $addVal2 is $result")
+            main()
+        }
+        //subtraction
+        "2" -> {
+            println("You have selected subtraction")
+            println("Enter your first number")
+            val diffVal1 = readLine()
+            val diff1Int = diffVal1?.toIntOrNull()
+            println("Enter your second number")
+            val diffVal2 = readLine()
+            val diff2Int = diffVal2?.toIntOrNull()
+            val diff = diff1Int?.let { diff2Int?.let { it1 -> difference(it, it1) } }
+            println("The difference between $diff1Int and $diffVal2 is $diff ")
+            main()
+        }
+        //division
+        "3" ->{
+            println("You have selected division")
+            println("Please enter your first number")
+            val divVal1 = readLine()
+            val div1Int = divVal1?.toIntOrNull()
+            println("Enter the second number")
+            val divVal2 = readLine()
+            val div2Int = divVal2?.toIntOrNull()
+            val div = div1Int?.let { div2Int?.let { it1 -> division(it, it1) } }
+            println("$div1Int divided by $div2Int is $div")
+            main()
+        }
+        //multiplication
+        "4" ->{
+            println("You have selected multiplication")
+            println("Enter the first number")
+            val multVal1 = readLine()
+            val mult1Int = multVal1?.toIntOrNull()
+            println("Please enter the second number")
+            val multVal2 = readLine()
+            val mult2Int = multVal2?.toIntOrNull()
+            val prod = mult1Int?.let { mult2Int?.let { it1 -> product(it, it1) } }
+            println("The product of $mult1Int and $mult2Int is $prod")
+            main()
+        }
+
+    }
+
+}
